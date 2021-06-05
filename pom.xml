@@ -7,7 +7,7 @@
         <relativePath />
     </parent>
   <properties>
-     <jenkins.version>2.289.1</jenkins.version>
+     <jenkins.version>2.296</jenkins.version>
   	<java.level>8</java.level>
   </properties>
 
@@ -41,7 +41,6 @@
       <groupId>com.google.oauth-client</groupId>
       <artifactId>google-oauth-client</artifactId>
       <version>1.23.0</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
