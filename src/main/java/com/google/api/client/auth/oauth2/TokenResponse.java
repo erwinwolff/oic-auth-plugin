@@ -14,8 +14,9 @@
 
 package com.google.api.client.auth.oauth2;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import com.google.api.client.json.GenericJson;
-import com.google.api.client.json.JsonString;
 import com.google.api.client.util.Key;
 import com.google.api.client.util.Preconditions;
 
@@ -31,7 +32,8 @@ import com.google.api.client.util.Preconditions;
  * @author Yaniv Inbar
  */
 public class TokenResponse extends GenericJson {
-
+	private static final Logger LOGGER = Logger.getLogger(TokenResponse.class.getName());
+	
     /** Access token issued by the authorization server. */
     @Key("access_token")
     private String accessToken;
@@ -70,6 +72,7 @@ public class TokenResponse extends GenericJson {
      * @return the access token
      */
     public final String getAccessToken() {
+    	LOGGER.log(Level.FINE, accessToken);
         return accessToken;
     }
 
