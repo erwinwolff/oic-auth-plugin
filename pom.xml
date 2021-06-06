@@ -107,6 +107,56 @@
       </plugin>
     </plugins>
   </build>
+  
+    <profiles>
+  
+   <profile>
+            <id>gulp-execution</id>
+            <activation>
+                <file>
+                    <exists>gulpfile.js</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                   <plugin>
+				    <groupId>org.codehaus.mojo</groupId>
+				    <artifactId>exec-maven-plugin</artifactId>
+				    <version>1.5.0</version>
+				    <executions>
+				       <execution>
+				          <id>run-npm-install</id>
+				          <phase>compile</phase>
+				          <goals>
+				             <goal>exec</goal>
+				          </goals>
+				          <configuration>
+				             <executable>npm</executable>
+				             <arguments>
+				                <argument>install</argument>
+				             </arguments>
+				           </configuration>
+				        </execution>
+				        <execution>
+				          <id>run-gulp</id>
+				          <phase>compile</phase>
+				          <goals>
+				             <goal>exec</goal>
+				          </goals>
+				          <configuration>
+				             <executable>gulp</executable>
+				             <arguments>
+				                <argument>bundle</argument>
+				             </arguments>
+				           </configuration>
+				        </execution>
+				    </executions>
+				</plugin>
+                </plugins>
+            </build>
+        </profile>
+  
+</profiles>
 <repositories>
         <repository>
             <id>repo.jenkins-ci.org</id>
@@ -120,5 +170,4 @@
         </pluginRepository>
     </pluginRepositories>
   
-
 </project>
