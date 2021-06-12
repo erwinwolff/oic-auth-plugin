@@ -33,8 +33,6 @@ import static org.jenkinsci.plugins.oic.TestRealm.EMAIL_FIELD;
 import static org.jenkinsci.plugins.oic.TestRealm.FULL_NAME_FIELD;
 import static org.jenkinsci.plugins.oic.TestRealm.GROUPS_FIELD;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -42,6 +40,7 @@ import static org.junit.Assert.assertTrue;
  * if if openid connect or if the openid connect implementation works. Rather we are only
  * checking if the jenkins interaction works and if the plugin code works.
  */
+@SuppressWarnings("deprecation")
 @Url("https://jenkins.io/blog/2018/01/13/jep-200/")
 public class PluginTest {
     private static final JsonFactory JSON_FACORY = new JacksonFactory();

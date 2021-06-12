@@ -5,6 +5,7 @@ import org.acegisecurity.userdetails.UserDetails;
 
 import java.util.Arrays;
 
+@SuppressWarnings("deprecation")
 public class OicUserDetails implements UserDetails {
     private static final long serialVersionUID = 1L;
 

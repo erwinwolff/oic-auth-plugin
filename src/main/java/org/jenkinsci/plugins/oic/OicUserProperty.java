@@ -12,6 +12,7 @@ import hudson.model.UserProperty;
 import hudson.model.UserPropertyDescriptor;
 import org.acegisecurity.GrantedAuthorityImpl;
 
+@SuppressWarnings("deprecation")
 public class OicUserProperty extends UserProperty {
 
     public static class Descriptor extends UserPropertyDescriptor {

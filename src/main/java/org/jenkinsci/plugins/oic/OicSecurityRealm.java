@@ -87,6 +87,7 @@ import static org.jenkinsci.plugins.oic.OicSecurityRealm.PlaceHolder.ABSENT;
 * @author Michael Bischoff
 * @author Steve Arch
 */
+@SuppressWarnings("deprecation")
 public class OicSecurityRealm extends SecurityRealm {
 	private static final Logger LOGGER = Logger.getLogger(OicSecurityRealm.class.getName());
 	
