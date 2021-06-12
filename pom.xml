@@ -7,7 +7,7 @@
         <relativePath />
     </parent>
   <properties>
-     <jenkins.version>2.289.1</jenkins.version>
+     <jenkins.version>2.296</jenkins.version>
   	<java.level>8</java.level>
   </properties>
 
@@ -41,7 +41,6 @@
       <groupId>com.google.oauth-client</groupId>
       <artifactId>google-oauth-client</artifactId>
       <version>1.23.0</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -108,6 +107,56 @@
       </plugin>
     </plugins>
   </build>
+  
+    <profiles>
+  
+   <profile>
+            <id>gulp-execution</id>
+            <activation>
+                <file>
+                    <exists>gulpfile.js</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                   <plugin>
+				    <groupId>org.codehaus.mojo</groupId>
+				    <artifactId>exec-maven-plugin</artifactId>
+				    <version>1.6.0</version>
+				    <executions>
+				       <execution>
+				          <id>run-npm-install</id>
+				          <phase>compile</phase>
+				          <goals>
+				             <goal>exec</goal>
+				          </goals>
+				          <configuration>
+				             <executable>npm</executable>
+				             <arguments>
+				                <argument>install</argument>
+				             </arguments>
+				           </configuration>
+				        </execution>
+				        <execution>
+				          <id>run-gulp</id>
+				          <phase>compile</phase>
+				          <goals>
+				             <goal>exec</goal>
+				          </goals>
+				          <configuration>
+				             <executable>gulp</executable>
+				             <arguments>
+				                <argument>bundle</argument>
+				             </arguments>
+				           </configuration>
+				        </execution>
+				    </executions>
+				</plugin>
+                </plugins>
+            </build>
+        </profile>
+  
+</profiles>
 <repositories>
         <repository>
             <id>repo.jenkins-ci.org</id>
@@ -121,5 +170,4 @@
         </pluginRepository>
     </pluginRepositories>
   
-
 </project>
