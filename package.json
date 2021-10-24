@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "npx npm-force-resolutions",
-	"postinstall": "node ./postinstall.js"
+    "postinstall": "node ./postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@jenkins-cd/js-modules": "latest",
-    "gently-copy": "^3.2.0"
+    "gently-copy": "^3.2.0",
+    "npm-force-resolutions": "^0.0.10"
   },
   "resolutions": {
     "graceful-fs": "^4.2.4"
