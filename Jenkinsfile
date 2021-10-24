@@ -7,13 +7,10 @@ pipeline {
   }
   stages {
     stage('BUILD') {
-      steps {
-	   dir('''$WORKSPACE''') {
       sh "pwd"
-	   sh '''cd $WORKSPACE && mvn install'''
-        sh '''cd $WORKSPACE && mvn hpi:verify'''
-		sh '''cd $WORKSPACE && mvn hpi:hpi'''
-    }
+	   sh '''mvn install'''
+        sh '''mvn hpi:verify'''
+		sh '''mvn hpi:hpi'''
 	   
       }
     }
