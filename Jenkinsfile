@@ -8,9 +8,9 @@ pipeline {
   stages {
     stage('BUILD') {
       steps {
-	    sh '''mvn install'''
-        sh '''mvn hpi:verify'''
-		sh '''mvn hpi:hpi'''
+	    sh '''cd $WORKSPACE && mvn install'''
+        sh '''cd $WORKSPACE && mvn hpi:verify'''
+		sh '''cd $WORKSPACE && mvn hpi:hpi'''
       }
     }
 
