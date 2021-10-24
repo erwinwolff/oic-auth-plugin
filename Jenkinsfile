@@ -7,11 +7,11 @@ pipeline {
   }
   stages {
     stage('BUILD') {
-      sh "pwd"
+	  steps {
 	   sh '''mvn install'''
         sh '''mvn hpi:verify'''
 		sh '''mvn hpi:hpi'''
-	   
+	   }
       }
    }
 }
