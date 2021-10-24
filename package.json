@@ -4,7 +4,9 @@
   "description": "oic-auth\r ============",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx npm-force-resolutions",
+	"postinstall": "node ./postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +19,14 @@
   },
   "homepage": "https://github.com/erwinwolff/oic-auth-plugin#readme",
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "@jenkins-cd/js-builder": "latest"
+    "@jenkins-cd/js-builder": "^0.0.64",
+    "gulp": "^3.9.1"
   },
   "dependencies": {
-    "@jenkins-cd/js-modules": "latest"
+    "@jenkins-cd/js-modules": "latest",
+    "gently-copy": "^3.2.0"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }
